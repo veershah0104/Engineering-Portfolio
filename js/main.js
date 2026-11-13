@@ -1,5 +1,5 @@
 /* ===== EDIT YOUR DETAILS HERE (name, contact, footer update on every page) ===== */
-const SITE={name:"Your Name",email:"you@email.com",linkedin:"https://linkedin.com/in/yourname",github:"https://github.com/yourname"};
+const SITE={name:"Veer Shah",email:"veershah0104@gmail.com",linkedin:"https://www.linkedin.com/in/veer-shah-7979a6227"};
 document.addEventListener('DOMContentLoaded',()=>{
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 $$('[data-site]').forEach(e=>e.textContent=SITE[e.dataset.site]);
