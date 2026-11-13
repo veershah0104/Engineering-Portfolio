@@ -3,17 +3,16 @@
 <main>
 <section class="p-hero"><div class="wrap"><p class="mono">Project 1 of 4</p>
 <h1>Sophia Robot Autonomous Mobile Base</h1><p style="max-width:620px;color:#b9c6db;font-size:1.2rem">An autonomous mobile base for the Sophia robot, built as a team of two.</p>
-<div class="meta"><div><span class="mono">Role</span><b>Your role</b></div><div><span class="mono">Duration</span><b>10 weeks</b></div><div><span class="mono">Tools</span><b>SolidWorks, ROS, Python, SBCs, IMU, GPS</b></div><div><span class="mono">Team</span><b>Team of 2</b></div></div>
-<figure class="ph rv" data-label="Hero image or render · 1600×900"><!-- <img src="assets/p1-hero.jpg" alt="Describe image"> --></figure></div></section>
+<div class="meta" style="grid-template-columns:repeat(3,1fr)"><div><span class="mono">Role</span><b>Robotics Engineer</b></div><div><span class="mono">Tools</span><b>SolidWorks, ROS, Python, SBCs, IMU, GPS</b></div><div><span class="mono">Team</span><b>Team of 2</b></div></div>
+<figure class="ph rv"><img src="assets/p1-hero.jpg" alt="Sophia robot mobile base with four wheels, batteries and carbon fibre tripod legs" ></figure></div></section>
 
 <section class="wrap">
-<div class="blk rv"><h2>The problem</h2><div><p>What needed solving, and why? Include constraints such as budget, size, load or deadline.</p></div></div>
-<div class="blk rv"><h2>My process</h2><div class="steps">
-<div><figure class="ph" data-label="Sketch · 800×500"></figure><h3>1. Concept</h3><p>Early sketches and ideas.</p></div>
-<div><figure class="ph" data-label="CAD · 800×500"></figure><h3>2. Design</h3><p>CAD, calculations, simulation.</p></div>
-<div><figure class="ph" data-label="Prototype · 800×500"></figure><h3>3. Build &amp; test</h3><p>Fabrication and results.</p></div></div></div>
-<div class="blk rv"><h2>Gallery</h2><div class="gal"><figure class="ph" data-label="Large image · 1200×900"></figure><figure class="ph" data-label="Detail · 800×500"></figure><figure class="ph" data-label="Detail · 800×500"></figure></div></div>
-<div class="blk rv"><h2>Results</h2><div><div class="res"><div><b>00%</b><span class="mono">key metric</span></div><div><b>0.0x</b><span class="mono">key metric</span></div><div><b>$00</b><span class="mono">key metric</span></div></div><p style="margin-top:24px">What worked, what failed, and what you would change next time.</p></div></div>
+<div class="blk rv"><h2>The problem</h2><div><p>The mobile base did not drive in a straight line, and it could only be moved with a remote control. To carry the Sophia robot, it needed to hold a heading and move on its own.</p></div></div>
+<div class="blk rv"><h2>My process</h2><div class="steps"><div><figure class="ph"><img src="assets/p1-cad.jpg" alt="SolidWorks model of the fiberglass base plate" loading="lazy"></figure><h3>1. Design</h3><p>Fibreglass base plate modelled in SolidWorks with patterned holes and mounting slots.</p></div><div><figure class="ph"><img src="assets/p1-fea.jpg" alt="SolidWorks Simulation stress plot on the base plate" loading="lazy"></figure><h3>2. Analyse</h3><p>Static stress study on the base plate: peak stress 54.3 MPa against an 85 MPa yield strength.</p></div><div><figure class="ph"><img src="assets/p1-testing.jpg" alt="Sophia robot standing on the mobile base during testing" loading="lazy"></figure><h3>3. Test</h3><p>The Sophia robot mounted on the mobile base for testing.</p></div></div></div>
+<div class="blk rv"><h2>Electronics &amp; wiring</h2><div><figure class="ph fit"><img src="assets/p1-wiring.jpg" alt="Mobile base on the workbench with controller, wiring, camera and wheels" loading="lazy"></figure><p style="margin-top:16px">The base on the bench with the controller, wiring, camera and wheels connected for testing.</p></div></div>
+<div class="blk rv"><h2>What failed</h2><div><ul><li>I looked for the fault in the ESC code, but no RPM setting I changed fixed the drift.</li><li>I then chased lag in the skateboard wheels, which I believed was the cause. It wasn't.</li><li>I also tried running the base from a flight controller with GPS, which did not solve it either.</li></ul></div></div>
+<div class="blk rv"><h2>What worked</h2><div><p>I stopped patching and redesigned the whole base. The bottom board became strengthened fibreglass. An SBC now sits between the remote and the motor controllers as the brain, instead of driving the ESCs directly. A RealSense camera (with its built-in IMU) provides depth vision, and a LiDAR sensor maps the room. Fusing these sensors turned the base into an autonomous platform.</p></div></div>
+<div class="blk rv"><h2>Results</h2><div><div class="res"><div><b>48° → 1°</b><span class="mono">heading drift over a 20 m path</span></div><div><b>46%</b><span class="mono">weight reduction at a similar strength profile</span></div></div></div></div>
 </section>
 <a class="next" href="project-2.html"><span class="mono">Next</span><h2>Formula Student Car Parts and Assembly</h2></a>
 </main><footer id="foot"></footer></body></html>
