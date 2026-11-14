@@ -1,19 +1,41 @@
-<!doctype html><html lang="en"><head><title>Voice Agent | Veer Shah</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=IBM+Plex+Mono&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><script src="js/main.js" defer></script></head><body>
+<!doctype html><html lang="en"><head><title>DUMEE Personal AI Agent | Veer Shah</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=IBM+Plex+Mono&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><script src="js/main.js" defer></script></head><body>
 <header id="nav" class="nav"></header>
 <main>
-<section class="p-hero"><div class="wrap"><p class="mono">Project 3 of 4</p>
-<h1>Voice Agent</h1><p style="max-width:620px;color:#b9c6db;font-size:1.2rem">A pure AI project: a voice agent built entirely in Python.</p>
-<div class="meta"><div><span class="mono">Role</span><b>Your role</b></div><div><span class="mono">Duration</span><b>10 weeks</b></div><div><span class="mono">Tools</span><b>Python</b></div><div><span class="mono">Team</span><b>Solo project</b></div></div>
-<figure class="ph rv" data-label="Hero image or render · 1600×900"><!-- <img src="assets/p3-hero.jpg" alt="Describe image"> --></figure></div></section>
+<section class="p-hero"><div class="wrap"><p class="mono">Personal project · Voice AI agent</p>
+<h1>DUMEE Personal AI Agent</h1><p style="max-width:620px;color:#b9c6db;font-size:1.2rem">A locally running voice AI agent that works as an executive assistant for a university student. It reads and writes the calendar, HKUST mail and Gmail, and safety is enforced in code, not left to the model.</p>
+<div class="meta" style="grid-template-columns:repeat(3,1fr)"><div><span class="mono">Role</span><b>Solo developer</b></div><div><span class="mono">Tools</span><b>Python, OpenRouter, Gmail API</b></div><div><span class="mono">Team</span><b>Solo project</b></div></div>
+<figure class="ph rv" data-label="Hero: screenshot of the agent running (terminal or interface) · 1600×900"><!-- <img src="assets/p3-hero.jpg" alt="Voice agent running"> --></figure></div></section>
 
 <section class="wrap">
-<div class="blk rv"><h2>The problem</h2><div><p>What needed solving, and why? Include constraints such as budget, size, load or deadline.</p></div></div>
-<div class="blk rv"><h2>My process</h2><div class="steps">
-<div><figure class="ph" data-label="Sketch · 800×500"></figure><h3>1. Concept</h3><p>Early sketches and ideas.</p></div>
-<div><figure class="ph" data-label="CAD · 800×500"></figure><h3>2. Design</h3><p>CAD, calculations, simulation.</p></div>
-<div><figure class="ph" data-label="Prototype · 800×500"></figure><h3>3. Build &amp; test</h3><p>Fabrication and results.</p></div></div></div>
-<div class="blk rv"><h2>Gallery</h2><div class="gal"><figure class="ph" data-label="Large image · 1200×900"></figure><figure class="ph" data-label="Detail · 800×500"></figure><figure class="ph" data-label="Detail · 800×500"></figure></div></div>
-<div class="blk rv"><h2>Results</h2><div><div class="res"><div><b>00%</b><span class="mono">key metric</span></div><div><b>0.0x</b><span class="mono">key metric</span></div><div><b>$00</b><span class="mono">key metric</span></div></div><p style="margin-top:24px">What worked, what failed, and what you would change next time.</p></div></div>
+<div class="blk rv"><h2>Demo</h2><div><figure class="ph" data-label="Demo video or screen recording of the voice agent in action · 1280×720"><!-- Video: <video src="assets/p3-demo.mp4" controls muted playsinline style="position:absolute;inset:0;width:100%;height:100%"></video> --></figure><p style="margin-top:16px">A short run of the voice agent giving the morning briefing and handling one confirmed action.</p></div></div>
+<div class="blk rv"><h2>Why I built it</h2><div><p>I wanted to improve my software skills, learn AI frameworks, and learn how to build code that is production ready, using Claude to help. The first thing I built was an agent for my own daily routine.</p><p>Every morning it gathers my calendar, HKUST mail and Gmail in one parallel call and gives me a single briefing. It saves me about 2 hours of repetitive work a week.</p></div></div>
+<div class="blk rv"><h2>How it works</h2><div><div class="flow"><div><b>Input</b>I speak or type a request. The current date and time are added on every turn.</div><div><b>Understand</b>The history and tool list go to an OpenRouter model. Only tools whose backend connected are offered.</div><div><b>Decide</b>The model picks tool calls. Reads run freely. Any send, create or delete stops at a confirmation gate in code.</div><div><b>Respond</b>Results (capped at 8,000 characters) go back to the model, which loops up to 12 times, then answers.</div></div></div></div>
+<div class="blk rv"><h2>Tech stack</h2><div><div class="chips"><span>Python 3.13</span><span>uv</span><span>OpenRouter</span><span>Gmail API</span><span>google-auth-oauthlib</span><span>PyObjC EventKit</span><span>AppleScript</span><span>Mail.app</span><span>Calendar.app</span><span>requests</span><span>python-dotenv</span><span>ThreadPoolExecutor</span><span>macOS (M1 Air)</span></div></div></div>
+<div class="blk rv"><h2>AI concepts</h2><div><p>DUMEE uses no agent framework such as LangChain. I built the loop by hand on the OpenAI-compatible tool-calling spec, so every behaviour is understood, logged and testable.</p><div class="chips"><span>Function calling</span><span>ReAct loop</span><span>Human-in-the-loop gating</span><span>Docstrings as tool specs</span><span>Context-window management</span><span>Scatter-gather concurrency</span><span>Circuit breaker</span><span>Retry with jitter</span><span>Stale-aware caching</span><span>Prompt-injection defence</span></div></div></div>
+<div class="blk rv"><h2>Tools it can call</h2><div><div class="tg"><div><h3>Calendar · 5</h3><ul><li>calendar_get_today</li><li>calendar_get_range</li><li>calendar_compose_event</li><li>calendar_create_event <i>gated</i></li><li>calendar_delete_event <i>gated</i></li></ul></div><div><h3>HKUST mail · 5</h3><ul><li>mail_get_unread</li><li>mail_get_content</li><li>mail_create_draft</li><li>mail_send_email <i>gated</i></li><li>mail_reply <i>gated</i> if send</li></ul></div><div><h3>Gmail · 6</h3><ul><li>gmail_list_unread</li><li>gmail_search</li><li>gmail_get_body</li><li>gmail_create_draft</li><li>gmail_send_email <i>gated</i></li><li>gmail_reply <i>gated</i> if send</li></ul></div><div><h3>Briefing · 1</h3><ul><li>get_morning_briefing</li></ul></div></div></div></div>
+<div class="blk rv"><h2>Key code</h2><div><div class="code">ALWAYS_CONFIRM = {&quot;gmail_send_email&quot;, &quot;mail_send_email&quot;,
+                  &quot;calendar_create_event&quot;, &quot;calendar_delete_event&quot;}
+CONFIRM_IF_SEND_TRUE = {&quot;gmail_reply&quot;, &quot;mail_reply&quot;}
+
+def needs_human_confirmation(tool_name, args):
+    if tool_name in ALWAYS_CONFIRM:
+        return True
+    if tool_name in CONFIRM_IF_SEND_TRUE and args.get(&quot;send&quot;) is True:
+        return True
+    return False
+
+def execute_tool(tool_name, args):
+    fn = TOOL_REGISTRY.get(tool_name)
+    if needs_human_confirmation(tool_name, args):
+        if not ask_human_confirmation(tool_name, args):
+            return {&quot;status&quot;: &quot;cancelled_by_user&quot;}
+        if &quot;confirm&quot; in inspect.signature(fn).parameters:
+            args[&quot;confirm&quot;] = True   # our gate, not the model&#x27;s
+    return fn(**args)</div><p>The model can request a destructive tool, but only a typed "y" from me runs it, and only this gate can set <code>confirm=True</code>. Safety lives in Python, not in the prompt.</p></div></div>
+<div class="blk rv"><h2>What failed</h2><div><ul><li>Google OAuth on campus wifi. TLS interception beat env vars, truststore and a monkey-patch. The fix was setting verify on the OAuth flow's own session.</li><li>AppleScript calendar reads. JXA, filter variations, concurrency caps and a background cache all failed, at roughly 22 ms per event.</li><li>icalBuddy returned no calendars, because EventKit needs its own permission grant.</li><li>Free-tier model limits: 429 errors and a daily request cap.</li><li>The Gmail refresh token expired after about 7 days.</li></ul></div></div>
+<div class="blk rv"><h2>What worked</h2><div><ul><li>EventKit in-process for reads and deletes, with AppleScript kept as a fallback behind a circuit breaker.</li><li>Injection-safe AppleScript: titles and email bodies are passed as arguments, never spliced into script text.</li><li>Safety in code: the confirmation gate, mail that defaults to a draft, a dry-run compose step, and exact-title deletes that skip recurring events.</li><li>Honest failure: a timeout on a delete means outcome unknown, and is checked against EventKit.</li><li>Resilience: retry with jitter, history compaction, a loop cap, and graceful tool loss (17 tools, or 11 if Gmail is down).</li></ul></div></div>
+<div class="blk rv"><h2>Results</h2><div><div class="res"><div><b>3,100×</b><span class="mono">faster calendar search<br>78.46 s to 0.025 s</span></div><div><b>280×</b><span class="mono">faster calendar delete<br>45.02 s timeout to 0.16 s</span></div><div><b>82/83</b><span class="mono">tests passing<br>(the one failure is an expired token)</span></div><div><b>≈2 h</b><span class="mono">saved per week<br>(my estimate)</span></div></div><p style="margin-top:24px">Speeds are from my own test run on 26 August 2026. The time saved is an estimate from my email volume (about 25 emails a day, 4 real replies), not a measurement.</p></div></div>
+<div class="blk rv"><h2>Status and next steps</h2><div><p>The backend and the voice feature are working. A visual interface is planned next.</p><ul><li>Add a tool to edit existing events, and a pinned model with reliable tool calling and streamed replies.</li><li>Extract tasks from mail threads and brief me proactively.</li><li>Replace the disabled TLS check with the real campus root certificate.</li></ul></div></div>
 </section>
 <a class="next" href="project-4.html"><span class="mono">Next</span><h2>Project Spacify</h2></a>
 </main><footer id="foot"></footer></body></html>
