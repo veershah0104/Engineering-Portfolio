@@ -90,3 +90,4 @@ footer{padding:36px 28px;text-align:center;border-top:1px solid rgba(214,228,245
 .tg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px}.tg h3{font-size:1rem;margin-bottom:6px}.tg ul{padding:0}.tg li{list-style:none;font:.8rem/1.9 var(--mono);color:#b9c6db}.tg li i{font-style:normal;color:var(--acc)}
 @media(max-width:820px){.tg{grid-template-columns:1fr}}
 .tg3{grid-template-columns:repeat(3,1fr)}@media(max-width:820px){.tg3{grid-template-columns:1fr}}
+.an{margin-top:36px}.an:first-child{margin-top:0}.an h3{font-size:1.2rem;margin:0 0 8px}.an p{color:#b9c6db;margin-bottom:12px}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px;margin:20px 0}.facts h3{font-size:1rem;margin-bottom:4px}.facts p{font-size:.92rem;color:var(--mute);margin:0}@media(max-width:820px){.facts{grid-template-columns:1fr}}
